@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tariku Asefa| Portfolio</title>
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    line-height:1.6;
+    background:#f4f7fc;
+    color:#333;
+}
+
+header{
+    background:#0d47a1;
+    color:white;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header h1{
+    font-size:28px;
+}
+
+.hero{
+    background:linear-gradient(rgba(13,71,161,0.9), rgba(13,71,161,0.9)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3');
+    background-size:cover;
+    color:white;
+    text-align:center;
+    padding:100px 10%;
+}
+
+.hero h2{
+    font-size:45px;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#ff9800;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+section{
+    padding:60px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#0d47a1;
+}
+
+.about{
+    max-width:1000px;
+    margin:0 auto;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.skill, .project, .service{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.4s;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Animated Background */
+.hero{
+    background: linear-gradient(-45deg,#0d47a1,#1565c0,#1976d2,#42a5f5);
+    background-size:400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Card Hover */
+.skill:hover,
+.project:hover,
+.service:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 30px rgba(0,0,0,0.2);
+}
+
+/* Navigation Hover */
+nav a{
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:3px;
+    background:#ff9800;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Animated Button */
+.btn{
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px rgba(255,152,0,0.7);
+}
+
+/* Search Box */
+.search-box{
+    flex:1;
+    text-align:center;
+    margin: 0 20px;
+}
+
+.search-box input{
+    width:250px;
+    max-width:100%;
+    padding:10px 15px;
+    border:none;
+    border-radius:25px;
+    outline:none;
+}
+
+/* Desktop Nav */
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Hamburger Button */
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+    padding: 5px 10px;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .search-box{
+        order:3;
+        width:100%;
+        margin-top:10px;
+        text-align:center;
+    }
+
+    nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#0d47a1;
+        flex-direction:column;
+        text-align:center;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .4s ease;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        max-height:400px;
+    }
+
+    nav a{
+        padding:15px;
+        border-top:1px solid rgba(255,255,255,.2);
+    }
+
+    .search-box input {
+        width: 90%;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Tariku Asefa</h1>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+
+    <nav id="navbar">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <h2>Web Developer & IT Teacher</h2>
+
+    <p>
+        Computer Science Graduate specializing in
+        Web Development, Educational Technology,
+        and School Management Systems.
+    </p>
+
+    <a href="#contact" class="btn">Hire Me</a>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+        <p>
+
+    
+I am a passionate and results-driven Full-Stack Web 
+Developer with expertise in designing, developing,
+ and deploying modern web applications that deliver 
+ exceptional user experiences and scalable business
+  solutions. With a strong foundation in both front-end 
+  and back-end technologies, I specialize in transforming 
+  ideas into responsive, secure, and
+   high-performance digital products.</p>
+
+  <p><b> My strong Core Competencies are:</b>
+ Front-End Development
+Back-End Development
+Full-Stack Web Development
+Responsive Web Design
+RESTful API Development
+Database Design & Management
+School Management Systems
+UI/UX Implementation
+   </p>
+    </div>
+
+</section>
+
+
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <h3>HTML5</h3>
+        </div>
+
+        <div class="skill">
+            <h3>CSS3</h3>
+        </div>
+
+        <div class="skill">
+            <h3>JavaScript</h3>
+        </div>
+        <div class="skill">
+            <h3>Git & GitHub</h3>
+        </div>
+
+        <div class="skill">
+            <h3>Responsive Design</h3>
+        </div>
+        <div class="skill">
+            <h3>UI/UX Design</h3>
+        </div>
+        <div class="skill">
+            <h3>PHP and SQL  </h3>
+        </div>
+        <div class="skill">
+            <h3>Wordpress</h3>
+        </div>
+        <div class="skill">
+            <h3>Front-End Frameworks</h3>
+        </div>
+        <div class="skill">
+            <h3>Python</h3>
+        </div>
+
+        <div class="skill">
+            <h3>C++</h3>
+        </div>
+
+        <div class="skill">
+            <h3>Java</h3>
+        </div>
+
+    </div>
+</section>
+
+<section id="services">
+    <h2 class="section-title">Services</h2>
+
+    <div class="services">
+
+        <div class="service">
+            <h3>Website Development</h3>
+            <p>Modern websites for schools, businesses, and organizations.</p>
+        </div>
+
+        <div class="service">
+            <h3>School Management Systems</h3>
+            <p>Digital systems for attendance, grades, and administration.</p>
+        </div>
+
+        <div class="service">
+            <h3>Front-End Development</h3>
+            <p>Responsive and user-friendly web interfaces.</p>
+        </div>
+
+        <div class="service">
+            <h3>ICT Training</h3>
+            <p>Training in HTML, CSS, JavaScript,PHP, MySQL and web development.</p>
+        </div>
+
+         <div class="service">
+            <h3>UI/UX Design</h3>
+            <p>Creating intuitive and engaging user experiences.</p>
+        </div>
+         <div class="service">
+            <h3>Project Management</h3>
+            <p>Planning and executing web development projects efficiently.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>School Management System</h3>
+
+            <p>
+                Student registration, attendance,
+                grade management, and reporting system.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Felegeneway Academy Website</h3>
+
+            <p>
+                Responsive school website with
+                admission and academic information.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Student Result System</h3>
+
+            <p>
+                Web application for managing
+                student grades and reports.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact">
+
+        <p><strong>Name:</strong> Tariku Asefa</p>
+
+        <p><strong>Phone:</strong> 0910894037</p>
+
+        <p><strong>Email:</strong> tarikuasefa120@gmail.com</p>
+
+        <p><strong>Availability:</strong> Open for Freelance Projects</p>
+
+    </div>
+</section>
+
+<footer>
+    <p>
+        © 2026 Tariku Asefa |
+        Web Developer | IT Teacher
+    </p>
+</footer>
+<script>
+// Hamburger menu functionality
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+
+menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+    
+    // Toggle icon between hamburger and X
+    if (navbar.classList.contains('active')) {
+        menuToggle.textContent = '✕';
+    } else {
+        menuToggle.textContent = '☰';
+    }
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        menuToggle.textContent = '☰';
+    });
+});
+</script>
+</body>
+</html>
